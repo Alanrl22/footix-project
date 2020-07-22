@@ -3,6 +3,7 @@ package com.wildcodeschool.footix.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "club")
@@ -15,6 +16,9 @@ public class Club {
     @NotNull
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "club")
+    private List<Player> players;
 
     public Club() {
     }
@@ -33,5 +37,13 @@ public class Club {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
     }
 }
