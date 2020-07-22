@@ -28,6 +28,14 @@ public class Player {
     @Column
     private String characteristics;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "club_id")
+    private Club club;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "role_id")
+    private Role role;
+
     public Player() {
     }
 
@@ -69,5 +77,21 @@ public class Player {
 
     public void setCharacteristics(String characteristics) {
         this.characteristics = characteristics;
+    }
+
+    public Club getClub() {
+        return club;
+    }
+
+    public void setClub(Club club) {
+        this.club = club;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

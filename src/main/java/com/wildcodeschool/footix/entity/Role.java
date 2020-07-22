@@ -3,6 +3,7 @@ package com.wildcodeschool.footix.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "role")
@@ -15,6 +16,9 @@ public class Role {
     @NotNull
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "role")
+    private List<Player> players;
 
     public Role() {
     }
