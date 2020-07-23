@@ -33,7 +33,7 @@
             <p>Particularité : <span th:text="${player.getCharacteristics()}"></span></p>
         </div>
     </div>
-    <form method="post" action="/delete-player">
+    <form method="post" action="/delete-player" class="delete">
         <input type="hidden" name="id" th:value="${player.id}">
         <input type="submit" value="Supprimer">
     </form>

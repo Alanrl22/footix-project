@@ -29,3 +29,10 @@ body {
     margin-top: 3rem;
     margin-bottom: 2rem;
 }
+
+.delete{
+    margin-top: 1rem;
+    display: flex;
+    padding-left: .5rem;
+    justify-content: flex-start;
+}
