@@ -19,6 +19,7 @@
 </div>
     <div class="card">
 <div class="ui card" th:each="player : ${players}" id="cards">
+
     <div class="image">
         <img th:src="${player.getImage()}">
 
@@ -32,6 +33,10 @@
             <p>Particularité : <span th:text="${player.getCharacteristics()}"></span></p>
         </div>
     </div>
+    <form method="post" action="/delete-player">
+        <input type="hidden" name="id" th:value="${player.id}">
+        <input type="submit" value="Supprimer">
+    </form>
 </div>
 </div>
 </body>
