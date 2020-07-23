@@ -13,15 +13,18 @@
         <img class="ui centered medium image" src="/images/footix.png">
     </div>
 </header>
-<a class="ui button" th:href="@{/player-creation.html}">Créer ton joueur</a>
-<div class="card">
+<div class="button-creation">
+    <a class="ui button" th:href="@{/player-creation}">Créer ton joueur</a>
+    <a class="ui button" th:href="@{/club-creation}">Créer ton club</a>
+</div>
+    <div class="card">
 <div class="ui card" th:each="player : ${players}" id="cards">
     <div class="image">
-        <img th:src="${player.getImage()}"alt="Messi est le plus fort">
+        <img th:src="${player.getImage()}">
 
     </div>
     <div class="content">
-        <div class="header" th:text="|${player.firstName.substring(0, 1).toUpperCase() + player.firstName.substring(1, player.firstName.length())} ${player.lastName.toUpperCase()}|">FOOTIX</div>
+        <div class="header" th:text="|${player.firstName} ${player.lastName.toUpperCase()}|">FOOTIX</div>
         <div class="description">
             <p>Poste : <span th:text="${player.role.getName()}"> Attaquant</span></p>
             <p>Club : <span th:text="${player.club.name}"></span></p>

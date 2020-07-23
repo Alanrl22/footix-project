@@ -40,6 +40,6 @@ public class PlayerCreationController {
     public String postPlayer(@ModelAttribute Player player) {
 
         playerRepository.save(player);
-        return "redirect:/home";
+        return "redirect:/";
     }
 }

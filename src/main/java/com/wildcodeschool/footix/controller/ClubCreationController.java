@@ -39,6 +39,6 @@ public class ClubCreationController {
 
         clubRepository.save(club);
 
-        return "redirect:/home";
+        return "redirect:/";
     }
 }

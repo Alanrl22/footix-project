@@ -10,7 +10,7 @@
 <body>
 <header>
     <div class="ui sizer vertical segment">
-        <img class="ui centered medium image" src="/images/footix.png">
+        <a th:href="@{/}"><img class="ui centered medium image" src="/images/footix.png"></a>
     </div>
 </header>
 <div class="ui sizer vertical segment">
@@ -29,15 +29,18 @@
         <label>Age</label>
         <input type="text" th:field="*{age}">
     </div>
+    <label style="font-weight: 700;">Club</label>
+    <select th:field="*{club.id}">
+        <option th:each="club : ${clubList}" th:value="${club.id}" th:text="${club.name}"></option>
+    </select>
+    <label style="font-weight: 700;">Role</label>
+    <select th:field="*{role.id}">
+        <option th:each="role : ${roleList}" th:value="${role.id}" th:text="${role.name}"></option>
+    </select>
     <div class="field">
-        <label>Club</label>
-        <input type="text" th:field="*{club.id}">
+        <label>Particularités</label>
+        <input type="text" th:field="*{characteristics}">
     </div>
-    <div class="field">
-        <label>Role</label>
-        <input type="text" th:field="*{role.id}">
-    </div>
-
     <button class="ui centered button" type="submit" id="button-search">Création</button>
 </form>
 </div>

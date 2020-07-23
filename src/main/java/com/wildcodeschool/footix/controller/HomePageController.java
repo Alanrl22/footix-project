@@ -28,7 +28,7 @@ public class HomePageController {
     @Autowired
     private RoleRepository roleRepository;
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String getHome(Model model) {
 
 
