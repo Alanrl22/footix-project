@@ -22,11 +22,14 @@ public class Player {
     @Column(nullable = false)
     private String firstName;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date birthdate;
+    @Column
+    private int age;
 
     @Column
     private String characteristics;
+
+    @Column
+    private String image;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "club_id")
@@ -63,12 +66,12 @@ public class Player {
         this.firstName = firstName;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
+    public int getAge() {
+        return age;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getCharacteristics() {
@@ -93,5 +96,13 @@ public class Player {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
