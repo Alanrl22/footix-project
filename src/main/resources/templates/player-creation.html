@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+<header>
+    <div class="ui sizer vertical segment">
+        <img class="ui centered medium image" src="/images/footix.png">
+    </div>
+</header>
 <div class="ui sizer vertical segment">
+    <div class="ui card" id="cards-player-creation">
 <form class="ui form" method="post" th:action="@{/player-creation}" th:object="${player}">
     <h4 class="ui dividing header">Création d'un joueur</h4>
     <div class="field">
@@ -32,8 +38,9 @@
         <input type="text" th:field="*{role.id}">
     </div>
 
-    <button class="ui button" type="submit">Submit</button>
+    <button class="ui centered button" type="submit" id="button-search">Création</button>
 </form>
+</div>
 </div>
 </body>
 </html>
