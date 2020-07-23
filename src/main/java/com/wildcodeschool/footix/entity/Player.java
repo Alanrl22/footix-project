@@ -31,11 +31,11 @@ public class Player {
     @Column
     private String image;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "club_id")
     private Club club;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
 
