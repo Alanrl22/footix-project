@@ -10,14 +10,15 @@
 <body>
 <header>
     <div class="ui sizer vertical segment">
-        <div class="ui centered huge header"><span style="color: blue">FOOTIX</span><span style="color: red"> 20</span></div>
         <img class="ui centered medium image" src="/images/footix.png">
     </div>
 </header>
+<button class="ui button" th:href="@{/player-creation.html}">Créer ton joueur</button>
 <div class="card">
 <div class="ui card" th:each="player : ${players}" id="cards">
     <div class="image">
-        <img th:src="@{player.image}">
+        <img th:src="${player.getImage()}"alt="Messi est le plus fort">
+
     </div>
     <div class="content">
         <div class="header" th:text="|${player.firstName.substring(0, 1).toUpperCase() + player.firstName.substring(1, player.firstName.length())} ${player.lastName.toUpperCase()}|">FOOTIX</div>

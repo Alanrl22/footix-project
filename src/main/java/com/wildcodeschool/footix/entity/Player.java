@@ -1,6 +1,7 @@
 package com.wildcodeschool.footix.entity;
 
 import com.sun.istack.NotNull;
+import org.hibernate.annotations.Type;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -26,16 +27,18 @@ public class Player {
     private int age;
 
     @Column
+    @Type(type = "text")
     private String characteristics;
 
     @Column
+    @Type(type = "text")
     private String image;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "club_id")
     private Club club;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
 
