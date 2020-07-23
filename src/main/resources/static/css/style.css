@@ -23,3 +23,9 @@ body {
     display: flex;
 }
 
+.button-creation{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}

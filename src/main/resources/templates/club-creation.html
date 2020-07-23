@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Player Creation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <div class="ui sizer vertical segment">
+        <a th:href="@{/}"><img class="ui centered medium image" src="/images/footix.png"></a>
+    </div>
+</header>
+<div class="ui sizer vertical segment">
+    <div class="ui card" id="cards-player-creation">
+        <form class="ui form" method="post" th:action="@{/club-creation}" th:object="${club}">
+            <h4 class="ui dividing header">Création d'un joueur</h4>
+            <div class="field">
+                <label>Nom du Club</label>
+                <input type="text" th:field="*{name}">
+            </div>
+            <button class="ui centered button" type="submit" id="button-search">Création</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

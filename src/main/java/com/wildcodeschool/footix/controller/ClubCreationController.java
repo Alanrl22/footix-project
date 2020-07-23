@@ -1,5 +1,6 @@
 package com.wildcodeschool.footix.controller;
 
+import com.wildcodeschool.footix.entity.Club;
 import com.wildcodeschool.footix.entity.Player;
 import com.wildcodeschool.footix.repository.ClubRepository;
 import com.wildcodeschool.footix.repository.PlayerRepository;
@@ -10,10 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class PlayerCreationController {
+public class ClubCreationController {
 
     @Autowired
     private PlayerRepository playerRepository;
@@ -24,22 +24,21 @@ public class PlayerCreationController {
     @Autowired
     private RoleRepository roleRepository;
 
-    @GetMapping("/player-creation")
-    public String getPlayerCreation(Model out) {
+    @GetMapping("/club-creation")
+    public String getClubCreation(Model out) {
 
-        Player player = new Player();
-        out.addAttribute("player", player);
-        out.addAttribute("clubList", clubRepository.findAll());
-        out.addAttribute("roleList", roleRepository.findAll());
+        Club club = new Club();
+        out.addAttribute("club", club);
 
-        return "player-creation";
+        return "club-creation";
     }
 
 
-    @PostMapping("/player-creation")
-    public String postPlayer(@ModelAttribute Player player) {
+    @PostMapping("/club-creation")
+    public String postClub(@ModelAttribute Club club) {
 
-        playerRepository.save(player);
+        clubRepository.save(club);
+
         return "redirect:/";
     }
 }
